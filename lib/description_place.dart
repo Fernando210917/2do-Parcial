@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
 
-class DescriptionPlace extends StatelessWidget{
+class DescriptionPlace extends StatelessWidget {
+
+  String textoTitulo;
+  int cantidadEstrellas;
+  String textoDescripcion;
+
+  DescriptionPlace(this.textoTitulo, this.cantidadEstrellas, this.textoDescripcion);
+
   @override
   Widget build(BuildContext context) {
-
     final titulo = Container(
       margin: EdgeInsets.only(
-          right: 20
+        right: 20
       ),
       child: Text(
-        "Pairumani",
+        textoTitulo,
         style: TextStyle(
-            fontSize: 38,
-            fontWeight: FontWeight.bold
+              fontSize: 38,
+              fontWeight: FontWeight.bold
         ),
       ),
     );
-
     final estrella = Container(
       margin: EdgeInsets.only(
-          right: 5
+        right: 5
       ),
       child: Icon(
         Icons.star,
@@ -27,9 +32,9 @@ class DescriptionPlace extends StatelessWidget{
       ),
     );
 
-    final estrellavacia = Container(
+    final estrellaBorde = Container(
       margin: EdgeInsets.only(
-          right: 5
+        right: 5
       ),
       child: Icon(
         Icons.star_border,
@@ -37,44 +42,45 @@ class DescriptionPlace extends StatelessWidget{
       ),
     );
 
-    final filaestrellas = Row(
-      children: <Widget>[
-        estrella,
-        estrella,
-        estrella,
-        estrella,
-        estrellavacia
-      ],
+    List<Container> estrellas = new List();
+    for(int i=0; i < 5; i++){
+       if(i < cantidadEstrellas){
+          estrellas.add(estrella);
+       } else {
+          estrellas.add(estrellaBorde);
+       }
+    }
+
+    final filaEstrellas = Row(
+      children: estrellas,
     );
 
-    final filatitulo = Row(
+    final filaTitulo = Row(
       children: <Widget>[
         titulo,
-        filaestrellas
+        filaEstrellas
       ],
     );
 
     final descripcion = Container(
       margin: EdgeInsets.only(
-          top: 10
+        top: 10
       ),
       child: Text(
-        "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.",
-        style: TextStyle(
-            color: Colors.black54
+          textoDescripcion,
+          style: TextStyle(
+          color: Colors.black54
         ),
       ),
     );
 
-    final descriptionplace = Column(
+    final descriptionPlace = Column(
       children: <Widget>[
-        filatitulo,
+        filaTitulo,
         descripcion
       ],
     );
-
-    return descriptionplace;
+    return descriptionPlace;
   }
-
 
 }

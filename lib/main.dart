@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 
 import 'home.dart';
 
-void main() {
+void main () {
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build (BuildContext context) {
     return MaterialApp(
-      title: "places",
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity
+      title: "Places",
+      theme: ThemeData (
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity
       ),
       home: MyHome(),
     );
   }
 }
+
+
+
+
