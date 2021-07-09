@@ -1,5 +1,5 @@
-name: practica_2do_parcial
-description: A new Flutter project.
+name: flutter2doparcial_app
+description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -74,3 +74,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
+fonts:
+  - family: Lato
+    fonts:
+      -asset: assets/fonts/Lato-Regular.ttf
