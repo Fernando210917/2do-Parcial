@@ -79,4 +79,7 @@ flutter:
 fonts:
   - family: Lato
     fonts:
-      -asset: assets/fonts/Lato-Regular.ttf
+      - asset: assets/fonts/Lato-Regular.ttf
+
+    assets:
+       - assets/images/persona.jpg
